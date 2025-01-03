@@ -23,6 +23,8 @@ namespace BdWpf
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
             var options = optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=userdb;Username=postgres;Password=7331").Options;
             db= new ApplicationContext(options);
+            List<string> results = db.Database.SqlQueryRaw<string>("SELECT table_name FROM information_schema.tables WHERE table_schema='public'").ToList();
+            queryList.ItemsSource =results;
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

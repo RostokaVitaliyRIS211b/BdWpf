@@ -20,7 +20,7 @@
             <ColumnDefinition Width="0.15*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" FlowDirection="LeftToRight">
-            <ComboBox Height="30" Width="170"/>
+            <ComboBox x:Name="queryList" Height="30" Width="170"/>
             <Separator Opacity="0" Width="20"/>
             <Button Height="55" Width="110" Content="Вывести таблицу"/>
             <Separator Opacity="0" Width="20"/>
