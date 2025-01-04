@@ -7,25 +7,65 @@ public class ApplicationContext : DbContext
     public DbSet<SubscriberType> subscribers { get; set; } = null!;
     public DbSet<JournalType> journals { get; set; } = null!;
     public DbSet<LitType> literatureoragnizations { get; set; } = null!;
-    public DbSet<TypeOf> statusesofsubscription { get; set; } = null!;
-    public DbSet<TypeOf> statusesofdelivery { get; set; } = null!;
-    public DbSet<TypeOf> namesofjournals { get; set; } = null!;
-    public DbSet<TypeOf> typesofjournals { get; set; } = null!;
-    public DbSet<TypeOf> typesoforganizations { get; set; } = null!;
+    public DbSet<Type5> statusesofsubscription { get; set; } = null!;
+    public DbSet<Type4> statusesofdelivery { get; set; } = null!;
+    public DbSet<Type3> namesofjournals { get; set; } = null!;
+    public DbSet<Type2> typesofjournals { get; set; } = null!;
+    public DbSet<Type1> typesoforganizations { get; set; } = null!;
     public ApplicationContext(DbContextOptions<ApplicationContext> options)
             : base(options)
     {
         Database.EnsureCreated();
     }
 }
-public class TypeOf
+public class Type1
 {
     [Column("id")]
     public int id { get; set; }
-    public string? Type { get; set; }
+    public string? type { get; set; }
     public override string ToString()
     {
-        return $"{id} {Type}";
+        return $"{id} {type}";
+    }
+}
+public class Type2
+{
+    [Column("id")]
+    public int id { get; set; }
+    public string? type { get; set; }
+    public override string ToString()
+    {
+        return $"{id} {type}";
+    }
+}
+public class Type3
+{
+    [Column("id")]
+    public int id { get; set; }
+    public string? type { get; set; }
+    public override string ToString()
+    {
+        return $"{id} {type}";
+    }
+}
+public class Type4
+{
+    [Column("id")]
+    public int id { get; set; }
+    public string? type { get; set; }
+    public override string ToString()
+    {
+        return $"{id} {type}";
+    }
+}
+public class Type5
+{
+    [Column("id")]
+    public int id { get; set; }
+    public string? type { get; set; }
+    public override string ToString()
+    {
+        return $"{id} {type}";
     }
 }
 public class LitType

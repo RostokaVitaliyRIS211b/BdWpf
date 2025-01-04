@@ -33,5 +33,48 @@ namespace BdWpf
             db.Dispose();
             db=null;
         }
+
+        private void Button_SqlQuery_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_SqlTable_Click(object sender, RoutedEventArgs e)
+        {
+            string s = queryList.SelectedItem as string;
+            switch (s)
+            {
+                case "typesoforganizations":
+                    dataGrid.ItemsSource = db.typesoforganizations.ToList();
+                    break;
+                case "typesofjournals":
+                    dataGrid.ItemsSource = db.typesofjournals.ToList();
+                    break;
+                case "namesofjournals":
+                    dataGrid.ItemsSource = db.namesofjournals.ToList();
+                    break;
+                case "statusesofdelivery":
+                    dataGrid.ItemsSource = db.statusesofdelivery.ToList();
+                    break;
+                case "statusesofsubscription":
+                    dataGrid.ItemsSource = db.statusesofsubscription.ToList();
+                    break;
+                case "literatureoragnizations":
+                    dataGrid.ItemsSource = db.literatureoragnizations.ToList();
+                    break;
+                case "journals":
+                    dataGrid.ItemsSource = db.journals.ToList();
+                    break;
+                case "subscribers":
+                    dataGrid.ItemsSource = db.subscribers.ToList();
+                    break;
+                case "subscriptions":
+                    dataGrid.ItemsSource = db.subscriptions.ToList();
+                    break;
+                default:
+                    break;
+            }
+
+        }
     }
 }

@@ -22,11 +22,11 @@
         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" FlowDirection="LeftToRight">
             <ComboBox x:Name="queryList" Height="30" Width="170"/>
             <Separator Opacity="0" Width="20"/>
-            <Button Height="55" Width="110" Content="Вывести таблицу"/>
+            <Button Height="55" Width="110" Content="Вывести таблицу" Click="Button_SqlTable_Click"/>
             <Separator Opacity="0" Width="20"/>
             <RichTextBox Height="70" Width="220"/>
             <Separator Opacity="0" Width="20"/>
-            <Button Height="55" Width="110" Content="Выполнить запрос"/>
+            <Button Height="55" Width="110" Content="Выполнить запрос" Click="Button_SqlQuery_Click"/>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical">
             <Separator Opacity="0" Height="15"/>
