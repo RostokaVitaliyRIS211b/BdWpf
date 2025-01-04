@@ -28,8 +28,24 @@ namespace BdWpf
             var results = db.Database.SqlQueryRaw<string>("SELECT table_name FROM information_schema.tables WHERE table_schema='public'").ToArray();
             queryList.ItemsSource =results;
             queryTextbox.TextWrapping=TextWrapping.Wrap;
+            AddNumberedButtons();
         }
-
+        private void AddNumberedButtons()
+        {
+            for (int i = 0; i<9; ++i)
+            {
+                Separator separator = new();
+                separator.Opacity=0;
+                separator.Height=5;
+                Button button = new();
+                button.Height=20;
+                button.Width=90;
+                button.Click+=Button_NumberedQuery_Click;
+                stackPanelRight.Children.Add(separator);
+                button.Content=$"Запрос {i+1}";
+                stackPanelRight.Children.Add(button);
+            }
+        }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             db.Database.CloseConnection();
@@ -94,6 +110,11 @@ namespace BdWpf
         {
             var result = db.subscriptions.FromSqlRaw("SELECT * FROM subscriptions WHERE idofstatusdelivery=2").ToArray();
             dataGrid.ItemsSource = result;
+        }
+
+        private void Button_NumberedQuery_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
