@@ -24,7 +24,8 @@
             <Separator Opacity="0" Width="20"/>
             <Button Height="55" Width="110" Content="Вывести таблицу" Click="Button_SqlTable_Click"/>
             <Separator Opacity="0" Width="20"/>
-            <RichTextBox Height="70" Width="220"/>
+            <TextBox x:Name="queryTextbox" Height="70" Width="220"/>
+
             <Separator Opacity="0" Width="20"/>
             <Button Height="55" Width="110" Content="Выполнить запрос" Click="Button_SqlQuery_Click"/>
         </StackPanel>
@@ -52,7 +53,7 @@
             <Separator Opacity="0" Height="5"/>
             <Button Height="20" Width="90" Content="Запрос 9" />
         </StackPanel>
-        <Button Grid.Column="1" Grid.Row="0" Height="70" Width="97" VerticalAlignment="Bottom" TextBlock.LineStackingStrategy="MaxHeight">
+        <Button Grid.Column="1" Grid.Row="0" Height="70" Width="97" VerticalAlignment="Bottom" TextBlock.LineStackingStrategy="MaxHeight" Click="Button_UndeliveredJournals_Click">
             <TextBlock TextWrapping="Wrap" TextAlignment="Center">Выявить недоставленные номера</TextBlock>
         </Button>
 
